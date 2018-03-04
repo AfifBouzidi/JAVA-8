@@ -31,11 +31,11 @@ public class JavaEightTest {
 	public void test() {
 		Predicate<Mobile> greenMobile= (Mobile m)->"green".equals(m.getColor());
 		LOG.info("#############");
-		List<Mobile> resultDuplicates = mobiles.stream().filter(greenMobile).collect(Collectors.toList());
-		LOG.info(resultDuplicates.toString());
+		List<Mobile> result = mobiles.stream().filter(greenMobile).collect(Collectors.toList());
+		LOG.info(result.toString());
 		LOG.info("#############code skips the two green mobiles");
-		List<Mobile> resultNoDuplicates = mobiles.stream().filter(greenMobile).skip(2).collect(Collectors.toList());
-		LOG.info(resultNoDuplicates.toString());
+		List<Mobile> resultSkip = mobiles.stream().filter(greenMobile).skip(2).collect(Collectors.toList());
+		LOG.info(resultSkip.toString());
 	}
 
 }
