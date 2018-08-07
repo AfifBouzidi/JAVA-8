@@ -3,7 +3,6 @@ package com.abouzidi.javaeight;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -31,9 +30,7 @@ public class JavaEightTest {
 	public void test() {
 		Optional<Mobile> mobileWithMaxPrice=mobiles.stream().collect(Collectors.maxBy(Comparator.comparing(Mobile::getPrice)));
 		Optional<Mobile> mobileWithMinPrice=mobiles.stream().collect(Collectors.minBy(Comparator.comparing(Mobile::getPrice)));
-		DoubleSummaryStatistics statistics = mobiles.stream().collect(Collectors.summarizingDouble(Mobile::getPrice));
 		LOG.info("mobileWithMaxPrice = "+mobileWithMaxPrice.get());
 		LOG.info("mobileWithMinPrice = "+mobileWithMinPrice.get());
-		LOG.info("statistics = "+statistics.toString());
 	}
 }
