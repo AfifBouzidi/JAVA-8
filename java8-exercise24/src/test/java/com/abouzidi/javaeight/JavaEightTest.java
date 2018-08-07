@@ -29,11 +29,7 @@ public class JavaEightTest {
 	
 	@Test
 	public void test() {
-		Optional<Mobile> mobileWithMaxPrice=mobiles.stream().collect(Collectors.maxBy(Comparator.comparing(Mobile::getPrice)));
-		Optional<Mobile> mobileWithMinPrice=mobiles.stream().collect(Collectors.minBy(Comparator.comparing(Mobile::getPrice)));
-		DoubleSummaryStatistics statistics = mobiles.stream().collect(Collectors.summarizingDouble(Mobile::getPrice));
-		LOG.info("mobileWithMaxPrice = "+mobileWithMaxPrice.get());
-		LOG.info("mobileWithMinPrice = "+mobileWithMinPrice.get());
-		LOG.info("statistics = "+statistics.toString());
+       String types= mobiles.stream().map((Mobile mobile)->mobile.getMobileType().name()).collect(Collectors.joining("-"));
+       LOG.info("types : "+types);
 	}
 }
